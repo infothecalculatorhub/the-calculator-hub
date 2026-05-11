@@ -222,11 +222,7 @@ function initCouponModal() {
   const modal = document.getElementById('coupon-modal');
   if (!modal) return;
 
-<<<<<<< HEAD
   // View Code button click - opens affiliate link AND shows modal
-=======
-  // View Code button click
->>>>>>> bd6a60a983ad80eb02e61fcf8f0b5bec12c812b0
   document.querySelectorAll('.view-code-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const card = btn.closest('.coupon-card');
@@ -239,14 +235,11 @@ function initCouponModal() {
       const rating = card.dataset.rating || '4.5';
       const expiry = card.dataset.expiry || '';
 
-<<<<<<< HEAD
       // Open affiliate link in new tab
       if (url) {
         window.open(url, '_blank');
       }
 
-=======
->>>>>>> bd6a60a983ad80eb02e61fcf8f0b5bec12c812b0
       // Populate modal
       const logoEl = modal.querySelector('.modal-tool-logo');
       if (logoEl) logoEl.textContent = tool.charAt(0).toUpperCase();
