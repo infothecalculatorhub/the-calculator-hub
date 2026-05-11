@@ -217,6 +217,113 @@ function initCategoryFilter() {
   });
 }
 
+// Coupon Modal
+function initCouponModal() {
+  const modal = document.getElementById('coupon-modal');
+  if (!modal) return;
+
+  // View Code button click
+  document.querySelectorAll('.view-code-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.coupon-card');
+      if (!card) return;
+
+      const tool = card.dataset.tool || '';
+      const discount = card.dataset.discount || '';
+      const code = card.dataset.code || '';
+      const url = card.dataset.url || '';
+      const rating = card.dataset.rating || '4.5';
+      const expiry = card.dataset.expiry || '';
+
+      // Populate modal
+      const logoEl = modal.querySelector('.modal-tool-logo');
+      if (logoEl) logoEl.textContent = tool.charAt(0).toUpperCase();
+
+      const nameEl = modal.querySelector('.modal-tool-name');
+      if (nameEl) nameEl.textContent = tool;
+
+      const discountEl = modal.querySelector('.modal-discount');
+      if (discountEl) discountEl.textContent = discount;
+
+      const codeEl = modal.querySelector('.modal-code');
+      if (codeEl) codeEl.textContent = code;
+
+      const dealBtn = modal.querySelector('.modal-deal-btn');
+      if (dealBtn && url) {
+        dealBtn.href = url;
+        dealBtn.onclick = () => window.open(url, '_blank');
+      }
+
+      const ratingEl = modal.querySelector('.modal-rating');
+      if (ratingEl) ratingEl.innerHTML = '★'.repeat(Math.floor(rating)) + '☆'.repeat(5 - Math.floor(rating)) + ` ${rating}/5`;
+
+      const expiryEl = modal.querySelector('.modal-expiry');
+      if (expiryEl && expiry) {
+        const expDate = new Date(expiry);
+        const days = Math.ceil((expDate - new Date()) / (1000 * 60 * 60 * 24));
+        expiryEl.textContent = days > 0 ? `${days} days left` : 'Expired';
+      }
+
+      // Show modal
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  // Close modal
+  const closeBtn = modal.querySelector('.modal-close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeModal);
+  }
+
+  const overlay = modal.querySelector('.modal-overlay');
+  if (overlay) {
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeModal();
+    });
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // Copy button in modal
+  const copyBtn = modal.querySelector('.modal-copy-btn');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', async function() {
+      const codeEl = modal.querySelector('.modal-code');
+      if (!codeEl) return;
+
+      const code = codeEl.textContent.trim();
+      try {
+        await navigator.clipboard.writeText(code);
+        this.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          Copied!
+        `;
+        this.classList.add('copied');
+        showToast('Coupon code copied!');
+
+        setTimeout(() => {
+          this.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            Copy Code
+          `;
+          this.classList.remove('copied');
+        }, 2000);
+      } catch (err) {
+        console.error('Copy failed', err);
+      }
+    });
+  }
+}
+
 // Initialize all functionality
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
@@ -225,4 +332,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initSearch();
   initExpiryCountdown();
   initCategoryFilter();
+  initCouponModal();
 });
