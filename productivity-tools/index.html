@@ -6,9 +6,10 @@
   <title>Productivity Tools Coupons & Deals - ToolCouponVault</title>
   <meta name="description" content="Boost your productivity with discounts on Notion, ClickUp, Asana, Trello and more. Up to 50% off.">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../data/dynamic.js"></script>
 </head>
-<body>
+<body onload="initCategoryPage('productivity-tools', 'Productivity Tools', 'Boost your productivity with discounts on Notion, ClickUp, Asana, Trello and more. Up to 50% off.');">
   <!-- Header -->
   <header class="header">
     <div class="header-content">
@@ -77,151 +78,7 @@
   </div>
 
   <section class="section">
-    <div class="featured-grid">
-      <article class="coupon-card" data-tool="Notion Plus" data-discount="40% OFF" data-code="NOTION40" data-url="https://notion.so" data-rating="4.8" data-expiry="2026-06-10" data-description="workspace tool">
-        <div class="coupon-header">
-          <div class="tool-logo">
-            <img src="https://www.google.com/s2/favicons?domain=notion.so&sz=64" alt="Notion" onerror="this.parentElement.innerHTML='N'">
-          </div>
-          <div class="coupon-info">
-            <h3>Notion Plus</h3>
-            <span class="discount-badge">40% OFF</span>
-          </div>
-        </div>
-        <p class="coupon-description">All-in-one workspace for notes, docs, and team collaboration</p>
-        <button class="view-code-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          View Code
-        </button>
-        <div class="coupon-meta">
-          <span class="star-rating">★★★★★ 4.8</span>
-          <span class="expiry-badge" data-expiry="2026-06-10">30d 2h left</span>
-        </div>
-      </article>
-
-      <article class="coupon-card" data-tool="ClickUp" data-discount="30% OFF" data-code="CLICK30" data-url="https://clickup.com" data-rating="4.7" data-expiry="2026-06-20" data-description="project management">
-        <div class="coupon-header">
-          <div class="tool-logo">
-            <img src="https://www.google.com/s2/favicons?domain=clickup.com&sz=64" alt="ClickUp" onerror="this.parentElement.innerHTML='C'">
-          </div>
-          <div class="coupon-info">
-            <h3>ClickUp</h3>
-            <span class="discount-badge">30% OFF</span>
-          </div>
-        </div>
-        <p class="coupon-description">One workspace to replace them all</p>
-        <button class="view-code-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          View Code
-        </button>
-        <div class="coupon-meta">
-          <span class="star-rating">★★★★★ 4.7</span>
-          <span class="expiry-badge" data-expiry="2026-06-20">40d 7h left</span>
-        </div>
-      </article>
-
-      <article class="coupon-card" data-tool="Asana Business" data-discount="45% OFF" data-code="ASANA45" data-url="https://asana.com" data-rating="4.6" data-expiry="2026-05-30" data-description="team tasks">
-        <div class="coupon-header">
-          <div class="tool-logo">
-            <img src="https://www.google.com/s2/favicons?domain=asana.com&sz=64" alt="Asana" onerror="this.parentElement.innerHTML='A'">
-          </div>
-          <div class="coupon-info">
-            <h3>Asana Business</h3>
-            <span class="discount-badge">45% OFF</span>
-          </div>
-        </div>
-        <p class="coupon-description">Team coordination and project management</p>
-        <button class="view-code-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          View Code
-        </button>
-        <div class="coupon-meta">
-          <span class="star-rating">★★★★☆ 4.6</span>
-          <span class="expiry-badge" data-expiry="2026-05-30">19d 5h left</span>
-        </div>
-      </article>
-
-      <article class="coupon-card" data-tool="Trello Premium" data-discount="50% OFF" data-code="TRELL050" data-url="https://trello.com" data-rating="4.5" data-expiry="2026-06-15" data-description="kanban boards">
-        <div class="coupon-header">
-          <div class="tool-logo">
-            <img src="https://www.google.com/s2/favicons?domain=trello.com&sz=64" alt="Trello" onerror="this.parentElement.innerHTML='T'">
-          </div>
-          <div class="coupon-info">
-            <h3>Trello Premium</h3>
-            <span class="discount-badge">50% OFF</span>
-          </div>
-        </div>
-        <p class="coupon-description">Visual boards for task and project management</p>
-        <button class="view-code-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          View Code
-        </button>
-        <div class="coupon-meta">
-          <span class="star-rating">★★★★☆ 4.5</span>
-          <span class="expiry-badge" data-expiry="2026-06-15">35d 8h left</span>
-        </div>
-      </article>
-
-      <article class="coupon-card" data-tool="Slack Pro" data-discount="35% OFF" data-code="SLACK35" data-url="https://slack.com" data-rating="4.8" data-expiry="2026-06-05" data-description="team communication">
-        <div class="coupon-header">
-          <div class="tool-logo">
-            <img src="https://www.google.com/s2/favicons?domain=slack.com&sz=64" alt="Slack" onerror="this.parentElement.innerHTML='S'">
-          </div>
-          <div class="coupon-info">
-            <h3>Slack Pro</h3>
-            <span class="discount-badge">35% OFF</span>
-          </div>
-        </div>
-        <p class="coupon-description">Team communication and collaboration platform</p>
-        <button class="view-code-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          View Code
-        </button>
-        <div class="coupon-meta">
-          <span class="star-rating">★★★★★ 4.8</span>
-          <span class="expiry-badge" data-expiry="2026-06-05">25d 11h left</span>
-        </div>
-      </article>
-
-      <article class="coupon-card" data-tool="Monday.com" data-discount="40% OFF" data-code="MONDAY40" data-url="https://monday.com" data-rating="4.7" data-expiry="2026-06-25" data-description="work management">
-        <div class="coupon-header">
-          <div class="tool-logo">
-            <img src="https://www.google.com/s2/favicons?domain=monday.com&sz=64" alt="Monday" onerror="this.parentElement.innerHTML='M'">
-          </div>
-          <div class="coupon-info">
-            <h3>Monday.com</h3>
-            <span class="discount-badge">40% OFF</span>
-          </div>
-        </div>
-        <p class="coupon-description">Work OS for modern teams</p>
-        <button class="view-code-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          View Code
-        </button>
-        <div class="coupon-meta">
-          <span class="star-rating">★★★★★ 4.7</span>
-          <span class="expiry-badge" data-expiry="2026-06-25">45d 2h left</span>
-        </div>
-      </article>
-    </div>
+    <div class="featured-grid" id="category-coupons"></div>
   </section>
 
   <!-- Coupon Modal -->

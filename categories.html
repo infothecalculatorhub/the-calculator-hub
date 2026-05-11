@@ -7,8 +7,9 @@
   <meta name="description" content="Browse all SaaS and AI tool categories. Find deals on hosting, design, SEO, productivity, and more.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="styles.css">
+  <script src="data/dynamic.js"></script>
 </head>
-<body>
+<body onload="initCategoriesPage();">
   <!-- Header -->
   <header class="header">
     <div class="header-content">
@@ -83,101 +84,7 @@
 
   <!-- Categories Section -->
   <section class="section">
-    <div class="category-grid" style="grid-template-columns: repeat(2, 1fr);">
-      <a href="ai-writing-tools.html" class="category-card">
-        <div class="category-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
-            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
-            <path d="M2 2l7.586 7.586"></path>
-            <circle cx="11" cy="11" r="2"></circle>
-          </svg>
-        </div>
-        <h3>AI Writing Tools</h3>
-        <span>24 Coupons</span>
-      </a>
-
-      <a href="ai-design-tools.html" class="category-card">
-        <div class="category-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
-            <line x1="9" y1="9" x2="9.01" y2="9"></line>
-            <line x1="15" y1="9" x2="15.01" y2="9"></line>
-          </svg>
-        </div>
-        <h3>AI Design Tools</h3>
-        <span>18 Coupons</span>
-      </a>
-
-      <a href="seo-tools.html" class="category-card">
-        <div class="category-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
-        </div>
-        <h3>SEO Tools</h3>
-        <span>32 Coupons</span>
-      </a>
-
-      <a href="web-hosting-deals.html" class="category-card">
-        <div class="category-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-            <line x1="8" y1="21" x2="16" y2="21"></line>
-            <line x1="12" y1="17" x2="12" y2="21"></line>
-          </svg>
-        </div>
-        <h3>Web Hosting</h3>
-        <span>45 Coupons</span>
-      </a>
-
-      <a href="email-marketing-tools.html" class="category-card">
-        <div class="category-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-            <polyline points="22,6 12,13 2,6"></polyline>
-          </svg>
-        </div>
-        <h3>Email Marketing</h3>
-        <span>21 Coupons</span>
-      </a>
-
-      <a href="productivity-tools.html" class="category-card">
-        <div class="category-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9 11 12 14 22 4"></polyline>
-            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
-          </svg>
-        </div>
-        <h3>Productivity</h3>
-        <span>36 Coupons</span>
-      </a>
-
-      <a href="video-tools.html" class="category-card">
-        <div class="category-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="23 7 16 12 23 17 23 7"></polygon>
-            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-          </svg>
-        </div>
-        <h3>Video Tools</h3>
-        <span>29 Coupons</span>
-      </a>
-
-      <a href="etsy-seller-tools.html" class="category-card">
-        <div class="category-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="9" cy="21" r="1"></circle>
-            <circle cx="20" cy="21" r="1"></circle>
-            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-          </svg>
-        </div>
-        <h3>Etsy Seller Tools</h3>
-        <span>15 Coupons</span>
-      </a>
-    </div>
+    <div class="category-grid" id="categories-container" style="grid-template-columns: repeat(2, 1fr);"></div>
   </section>
 
   <!-- Footer -->

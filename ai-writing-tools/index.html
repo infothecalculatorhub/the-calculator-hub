@@ -6,9 +6,10 @@
   <title>AI Writing Tools Coupons & Deals - ToolCouponVault</title>
   <meta name="description" content="Save big on AI writing tools like Jasper, Grammarly, Copy.ai and more. Up to 60% off coupon codes.">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../data/dynamic.js"></script>
 </head>
-<body>
+<body onload="initCategoryPage('ai-writing-tools', 'AI Writing Tools', 'Save up to 60% on AI-powered writing assistants');">
   <!-- Header -->
   <header class="header">
     <div class="header-content">
@@ -77,151 +78,7 @@
   </div>
 
   <section class="section">
-    <div class="featured-grid">
-      <article class="coupon-card" data-tool="Jasper AI" data-discount="50% OFF" data-code="JASPER50AI" data-url="https://jasper.ai" data-rating="4.7" data-expiry="2026-05-20" data-description="ai content creation" data-category="ai-writing">
-        <div class="coupon-header">
-          <div class="tool-logo">
-            <img src="https://www.google.com/s2/favicons?domain=jasper.ai&sz=64" alt="Jasper" onerror="this.parentElement.innerHTML='J'">
-          </div>
-          <div class="coupon-info">
-            <h3>Jasper AI</h3>
-            <span class="discount-badge">50% OFF</span>
-          </div>
-        </div>
-        <p class="coupon-description">AI-powered content creation for teams and professionals</p>
-        <button class="view-code-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          View Code
-        </button>
-        <div class="coupon-meta">
-          <span class="star-rating">★★★★☆ 4.7</span>
-          <span class="expiry-badge" data-expiry="2026-05-20">35d 4h left</span>
-        </div>
-      </article>
-
-      <article class="coupon-card" data-tool="Grammarly Premium" data-discount="40% OFF" data-code="GRAMMAR40" data-url="https://grammarly.com" data-rating="4.9" data-expiry="2026-05-28" data-description="writing assistant" data-category="ai-writing">
-        <div class="coupon-header">
-          <div class="tool-logo">
-            <img src="https://www.google.com/s2/favicons?domain=grammarly.com&sz=64" alt="Grammarly" onerror="this.parentElement.innerHTML='G'">
-          </div>
-          <div class="coupon-info">
-            <h3>Grammarly Premium</h3>
-            <span class="discount-badge">40% OFF</span>
-          </div>
-        </div>
-        <p class="coupon-description">AI-powered writing assistant for flawless content</p>
-        <button class="view-code-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          View Code
-        </button>
-        <div class="coupon-meta">
-          <span class="star-rating">★★★★★ 4.9</span>
-          <span class="expiry-badge" data-expiry="2026-05-28">17d 9h left</span>
-        </div>
-      </article>
-
-      <article class="coupon-card" data-tool="Copy.ai" data-discount="55% OFF" data-code="COPY55AI" data-url="https://copy.ai" data-rating="4.6" data-expiry="2026-06-10" data-description="ai copywriting" data-category="ai-writing">
-        <div class="coupon-header">
-          <div class="tool-logo">
-            <img src="https://www.google.com/s2/favicons?domain=copy.ai&sz=64" alt="Copy.ai" onerror="this.parentElement.innerHTML='C'">
-          </div>
-          <div class="coupon-info">
-            <h3>Copy.ai</h3>
-            <span class="discount-badge">55% OFF</span>
-          </div>
-        </div>
-        <p class="coupon-description">AI copywriting tool for marketing and sales teams</p>
-        <button class="view-code-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          View Code
-        </button>
-        <div class="coupon-meta">
-          <span class="star-rating">★★★★☆ 4.6</span>
-          <span class="expiry-badge" data-expiry="2026-06-10">30d 2h left</span>
-        </div>
-      </article>
-
-      <article class="coupon-card" data-tool="Writesonic" data-discount="60% OFF" data-code="WRITE60" data-url="https://writesonic.com" data-rating="4.5" data-expiry="2026-06-15" data-description="ai content writer" data-category="ai-writing">
-        <div class="coupon-header">
-          <div class="tool-logo">
-            <img src="https://www.google.com/s2/favicons?domain=writesonic.com&sz=64" alt="Writesonic" onerror="this.parentElement.innerHTML='W'">
-          </div>
-          <div class="coupon-info">
-            <h3>Writesonic</h3>
-            <span class="discount-badge">60% OFF</span>
-          </div>
-        </div>
-        <p class="coupon-description">AI writer for blogs, ads, and ecommerce content</p>
-        <button class="view-code-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          View Code
-        </button>
-        <div class="coupon-meta">
-          <span class="star-rating">★★★★☆ 4.5</span>
-          <span class="expiry-badge" data-expiry="2026-06-15">35d 8h left</span>
-        </div>
-      </article>
-
-      <article class="coupon-card" data-tool="Anyword" data-discount="45% OFF" data-code="ANY45WORD" data-url="https://anyword.com" data-rating="4.4" data-expiry="2026-05-25" data-description="predictive writing" data-category="ai-writing">
-        <div class="coupon-header">
-          <div class="tool-logo">
-            <img src="https://www.google.com/s2/favicons?domain=anyword.com&sz=64" alt="Anyword" onerror="this.parentElement.innerHTML='A'">
-          </div>
-          <div class="coupon-info">
-            <h3>Anyword</h3>
-            <span class="discount-badge">45% OFF</span>
-          </div>
-        </div>
-        <p class="coupon-description">AI writing tool with predictive performance scores</p>
-        <button class="view-code-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          View Code
-        </button>
-        <div class="coupon-meta">
-          <span class="star-rating">★★★★☆ 4.4</span>
-          <span class="expiry-badge" data-expiry="2026-05-25">14d 6h left</span>
-        </div>
-      </article>
-
-      <article class="coupon-card" data-tool="CopySmith" data-discount="50% OFF" data-code="SMITH50" data-url="https://copysmith.ai" data-rating="4.3" data-expiry="2026-06-20" data-description="ai content generator" data-category="ai-writing">
-        <div class="coupon-header">
-          <div class="tool-logo">
-            <img src="https://www.google.com/s2/favicons?domain=copysmith.ai&sz=64" alt="CopySmith" onerror="this.parentElement.innerHTML='C'">
-          </div>
-          <div class="coupon-info">
-            <h3>CopySmith</h3>
-            <span class="discount-badge">50% OFF</span>
-          </div>
-        </div>
-        <p class="coupon-description">Enterprise AI content generation for brands</p>
-        <button class="view-code-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          View Code
-        </button>
-        <div class="coupon-meta">
-          <span class="star-rating">★★★★☆ 4.3</span>
-          <span class="expiry-badge" data-expiry="2026-06-20">40d 7h left</span>
-        </div>
-      </article>
-    </div>
+    <div class="featured-grid" id="category-coupons"></div>
   </section>
 
   <!-- Coupon Modal -->

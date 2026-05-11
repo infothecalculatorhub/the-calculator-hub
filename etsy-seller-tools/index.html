@@ -6,9 +6,10 @@
   <title>Etsy Seller Tools Coupons & Deals - ToolCouponVault</title>
   <meta name="description" content="Save on tools for Etsy sellers. Find deals on design tools, listing optimizers, and more.">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../data/dynamic.js"></script>
 </head>
-<body>
+<body onload="initCategoryPage('etsy-seller-tools', 'Etsy Seller Tools', 'Save on tools for Etsy sellers. Find deals on design tools, listing optimizers, and more.');">
   <!-- Header -->
   <header class="header">
     <div class="header-content">
@@ -77,151 +78,7 @@
   </div>
 
   <section class="section">
-    <div class="featured-grid">
-      <article class="coupon-card" data-tool="Canva Pro" data-discount="60% OFF" data-code="CANVA60PRO" data-url="https://canva.com" data-rating="4.9" data-expiry="2026-06-01" data-description="etsy designs">
-        <div class="coupon-header">
-          <div class="tool-logo">
-            <img src="https://www.google.com/s2/favicons?domain=canva.com&sz=64" alt="Canva" onerror="this.parentElement.innerHTML='C'">
-          </div>
-          <div class="coupon-info">
-            <h3>Canva Pro</h3>
-            <span class="discount-badge">60% OFF</span>
-          </div>
-        </div>
-        <p class="coupon-description">Create professional Etsy product designs and listings</p>
-        <button class="view-code-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          View Code
-        </button>
-        <div class="coupon-meta">
-          <span class="star-rating">★★★★★ 4.9</span>
-          <span class="expiry-badge" data-expiry="2026-06-01">21d 8h left</span>
-        </div>
-      </article>
-
-      <article class="coupon-card" data-tool="EtsyHunt" data-discount="50% OFF" data-code="HUNT50" data-url="https://etsyhunt.com" data-rating="4.6" data-expiry="2026-05-30" data-description="etsy research">
-        <div class="coupon-header">
-          <div class="tool-logo">
-            <img src="https://www.google.com/s2/favicons?domain=etsyhunt.com&sz=64" alt="EtsyHunt" onerror="this.parentElement.innerHTML='E'">
-          </div>
-          <div class="coupon-info">
-            <h3>EtsyHunt</h3>
-            <span class="discount-badge">50% OFF</span>
-          </div>
-        </div>
-        <p class="coupon-description">Etsy analytics and product research tool</p>
-        <button class="view-code-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          View Code
-        </button>
-        <div class="coupon-meta">
-          <span class="star-rating">★★★★☆ 4.6</span>
-          <span class="expiry-badge" data-expiry="2026-05-30">19d 5h left</span>
-        </div>
-      </article>
-
-      <article class="coupon-card" data-tool="Sale Samurai" data-discount="45% OFF" data-code="SAMURAI45" data-url="https://salesamurai.com" data-rating="4.5" data-expiry="2026-06-10" data-description="etsy seo">
-        <div class="coupon-header">
-          <div class="tool-logo">
-            <img src="https://www.google.com/s2/favicons?domain=salesamurai.com&sz=64" alt="Sale Samurai" onerror="this.parentElement.innerHTML='S'">
-          </div>
-          <div class="coupon-info">
-            <h3>Sale Samurai</h3>
-            <span class="discount-badge">45% OFF</span>
-          </div>
-        </div>
-        <p class="coupon-description">SEO tool for Etsy listings optimization</p>
-        <button class="view-code-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          View Code
-        </button>
-        <div class="coupon-meta">
-          <span class="star-rating">★★★★☆ 4.5</span>
-          <span class="expiry-badge" data-expiry="2026-06-10">30d 2h left</span>
-        </div>
-      </article>
-
-      <article class="coupon-card" data-tool="Crown" data-discount="40% OFF" data-code="CROWN40" data-url="https://crown.ai" data-rating="4.7" data-expiry="2026-06-15" data-description="etsy listing">
-        <div class="coupon-header">
-          <div class="tool-logo">
-            <img src="https://www.google.com/s2/favicons?domain=crown.ai&sz=64" alt="Crown" onerror="this.parentElement.innerHTML='C'">
-          </div>
-          <div class="coupon-info">
-            <h3>Crown</h3>
-            <span class="discount-badge">40% OFF</span>
-          </div>
-        </div>
-        <p class="coupon-description">AI-powered Etsy listing optimization</p>
-        <button class="view-code-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          View Code
-        </button>
-        <div class="coupon-meta">
-          <span class="star-rating">★★★★★ 4.7</span>
-          <span class="expiry-badge" data-expiry="2026-06-15">35d 8h left</span>
-        </div>
-      </article>
-
-      <article class="coupon-card" data-tool="Creative Fabrica" data-discount="55% OFF" data-code="FABRICA55" data-url="https://creativefabrica.com" data-rating="4.8" data-expiry="2026-05-25" data-description="printable designs">
-        <div class="coupon-header">
-          <div class="tool-logo">
-            <img src="https://www.google.com/s2/favicons?domain=creativefabrica.com&sz=64" alt="Creative Fabrica" onerror="this.parentElement.innerHTML='P'">
-          </div>
-          <div class="coupon-info">
-            <h3>Creative Fabrica</h3>
-            <span class="discount-badge">55% OFF</span>
-          </div>
-        </div>
-        <p class="coupon-description">Fonts, graphics and printables for Etsy sellers</p>
-        <button class="view-code-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          View Code
-        </button>
-        <div class="coupon-meta">
-          <span class="star-rating">★★★★★ 4.8</span>
-          <span class="expiry-badge" data-expiry="2026-05-25">14d 6h left</span>
-        </div>
-      </article>
-
-      <article class="coupon-card" data-tool="Marmalead" data-discount="35% OFF" data-code="MARMAL35" data-url="https://marmalead.com" data-rating="4.4" data-expiry="2026-06-20" data-description="etsy keyword">
-        <div class="coupon-header">
-          <div class="tool-logo">
-            <img src="https://www.google.com/s2/favicons?domain=marmalead.com&sz=64" alt="Marmalead" onerror="this.parentElement.innerHTML='M'">
-          </div>
-          <div class="coupon-info">
-            <h3>Marmalead</h3>
-            <span class="discount-badge">35% OFF</span>
-          </div>
-        </div>
-        <p class="coupon-description">Etsy keyword research and trend analysis</p>
-        <button class="view-code-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          View Code
-        </button>
-        <div class="coupon-meta">
-          <span class="star-rating">★★★★☆ 4.4</span>
-          <span class="expiry-badge" data-expiry="2026-06-20">40d 7h left</span>
-        </div>
-      </article>
-    </div>
+    <div class="featured-grid" id="category-coupons"></div>
   </section>
 
   <!-- Coupon Modal -->

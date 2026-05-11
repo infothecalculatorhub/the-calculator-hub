@@ -6,9 +6,10 @@
   <title>SEO Tools Coupons & Deals - ToolCouponVault</title>
   <meta name="description" content="Save on SEO tools like Semrush, Ahrefs, Moz and more. Up to 45% off coupon codes.">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../data/dynamic.js"></script>
 </head>
-<body>
+<body onload="initCategoryPage('seo-tools', 'SEO Tools', 'Save on SEO tools like Semrush, Ahrefs, Moz and more. Up to 45% off coupon codes.');">
   <!-- Header -->
   <header class="header">
     <div class="header-content">
@@ -77,151 +78,7 @@
   </div>
 
   <section class="section">
-    <div class="featured-grid">
-      <article class="coupon-card" data-tool="Semrush" data-discount="45% OFF" data-code="SEMRUSH45" data-url="https://semrush.com" data-rating="4.9" data-expiry="2026-05-25" data-description="seo toolkit">
-        <div class="coupon-header">
-          <div class="tool-logo">
-            <img src="https://www.google.com/s2/favicons?domain=semrush.com&sz=64" alt="Semrush" onerror="this.parentElement.innerHTML='S'">
-          </div>
-          <div class="coupon-info">
-            <h3>Semrush</h3>
-            <span class="discount-badge">45% OFF</span>
-          </div>
-        </div>
-        <p class="coupon-description">All-in-one SEO toolkit for digital marketing professionals</p>
-        <button class="view-code-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          View Code
-        </button>
-        <div class="coupon-meta">
-          <span class="star-rating">★★★★★ 4.9</span>
-          <span class="expiry-badge" data-expiry="2026-05-25">14d 6h left</span>
-        </div>
-      </article>
-
-      <article class="coupon-card" data-tool="Ahrefs" data-discount="40% OFF" data-code="AHREFS40" data-url="https://ahrefs.com" data-rating="4.9" data-expiry="2026-06-10" data-description="seo analysis">
-        <div class="coupon-header">
-          <div class="tool-logo">
-            <img src="https://www.google.com/s2/favicons?domain=ahrefs.com&sz=64" alt="Ahrefs" onerror="this.parentElement.innerHTML='A'">
-          </div>
-          <div class="coupon-info">
-            <h3>Ahrefs</h3>
-            <span class="discount-badge">40% OFF</span>
-          </div>
-        </div>
-        <p class="coupon-description">Complete SEO toolkit with backlinks analysis</p>
-        <button class="view-code-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          View Code
-        </button>
-        <div class="coupon-meta">
-          <span class="star-rating">★★★★★ 4.9</span>
-          <span class="expiry-badge" data-expiry="2026-06-10">30d 2h left</span>
-        </div>
-      </article>
-
-      <article class="coupon-card" data-tool="Moz Pro" data-discount="35% OFF" data-code="MOZ35PRO" data-url="https://moz.com" data-rating="4.6" data-expiry="2026-05-30" data-description="seo software">
-        <div class="coupon-header">
-          <div class="tool-logo">
-            <img src="https://www.google.com/s2/favicons?domain=moz.com&sz=64" alt="Moz" onerror="this.parentElement.innerHTML='M'">
-          </div>
-          <div class="coupon-info">
-            <h3>Moz Pro</h3>
-            <span class="discount-badge">35% OFF</span>
-          </div>
-        </div>
-        <p class="coupon-description">SEO software for better search rankings</p>
-        <button class="view-code-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          View Code
-        </button>
-        <div class="coupon-meta">
-          <span class="star-rating">★★★★☆ 4.6</span>
-          <span class="expiry-badge" data-expiry="2026-05-30">19d 5h left</span>
-        </div>
-      </article>
-
-      <article class="coupon-card" data-tool="Surfer SEO" data-discount="50% OFF" data-code="SURFER50" data-url="https://surfer.com" data-rating="4.8" data-expiry="2026-06-15" data-description="content optimization">
-        <div class="coupon-header">
-          <div class="tool-logo">
-            <img src="https://www.google.com/s2/favicons?domain=surfer.com&sz=64" alt="Surfer" onerror="this.parentElement.innerHTML='S'">
-          </div>
-          <div class="coupon-info">
-            <h3>Surfer SEO</h3>
-            <span class="discount-badge">50% OFF</span>
-          </div>
-        </div>
-        <p class="coupon-description">Data-driven content optimization for SEO</p>
-        <button class="view-code-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          View Code
-        </button>
-        <div class="coupon-meta">
-          <span class="star-rating">★★★★★ 4.8</span>
-          <span class="expiry-badge" data-expiry="2026-06-15">35d 8h left</span>
-        </div>
-      </article>
-
-      <article class="coupon-card" data-tool="Screaming Frog" data-discount="30% OFF" data-code="FROG30SEO" data-url="https://screamingfrog.co.uk" data-rating="4.5" data-expiry="2026-06-20" data-description="seo spider">
-        <div class="coupon-header">
-          <div class="tool-logo">
-            <img src="https://www.google.com/s2/favicons?domain=screamingfrog.co.uk&sz=64" alt="Screaming Frog" onerror="this.parentElement.innerHTML='S'">
-          </div>
-          <div class="coupon-info">
-            <h3>Screaming Frog</h3>
-            <span class="discount-badge">30% OFF</span>
-          </div>
-        </div>
-        <p class="coupon-description">Website crawler for SEO audits</p>
-        <button class="view-code-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          View Code
-        </button>
-        <div class="coupon-meta">
-          <span class="star-rating">★★★★☆ 4.5</span>
-          <span class="expiry-badge" data-expiry="2026-06-20">40d 7h left</span>
-        </div>
-      </article>
-
-      <article class="coupon-card" data-tool="Mangools" data-discount="45% OFF" data-code="MANGO45" data-url="https://mangools.com" data-rating="4.6" data-expiry="2026-05-18" data-description="seo suite">
-        <div class="coupon-header">
-          <div class="tool-logo">
-            <img src="https://www.google.com/s2/favicons?domain=mangools.com&sz=64" alt="Mangools" onerror="this.parentElement.innerHTML='M'">
-          </div>
-          <div class="coupon-info">
-            <h3>Mangools</h3>
-            <span class="discount-badge">45% OFF</span>
-          </div>
-        </div>
-        <p class="coupon-description">Simple yet powerful SEO tools for beginners</p>
-        <button class="view-code-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          View Code
-        </button>
-        <div class="coupon-meta">
-          <span class="star-rating">★★★★☆ 4.6</span>
-          <span class="expiry-badge" data-expiry="2026-05-18">7d 15h left</span>
-        </div>
-      </article>
-    </div>
+    <div class="featured-grid" id="category-coupons"></div>
   </section>
 
   <!-- Coupon Modal -->
