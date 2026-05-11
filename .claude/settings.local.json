@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -L -o \"site_structure.png\" \"https://minimax-algeng-chat-tts-us.oss-us-east-1.aliyuncs.com/ccv2%2F2026-05-12%2FMiniMax-M2.7%2F1985441370147393974%2Fd6f40315ae462cb582bb8ab1f87e53095ceab202ef07ac75aae966676ac6c5fd..png?Expires=1778628206&OSSAccessKeyId=LTAI5tCpJNKCf5EkQHSuL9xg&Signature=wbXoq3vDrMb9ddaSerLWi2vQEEQ%3D\")",
+      "Bash(Get-ChildItem -Filter \"*.html\" -Recurse)",
+      "Bash(Select-Object -ExpandProperty FullName)"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://toolcouponvault.com/sitemap.xml
+
+# Crawl-delay (optional, be nice to small sites)
+Crawl-delay: 1
+
+# Block search engines from indexing low-value pages
+Disallow: /privacy-policy.html
+Disallow: /terms-and-conditions.html
+Disallow: /cookie-policy.html
+Disallow: /affiliate-disclosure.html
