@@ -132,7 +132,7 @@ function generateBlogPostCard(post) {
       </div>
       <div class="blog-post-content">
         <span class="blog-post-category">${post.category}</span>
-        <h2><a href="blog/${post.slug}">${post.title}</a></h2>
+        <h2><a href="${post.slug}">${post.title}</a></h2>
         <p>${post.excerpt}</p>
         <div class="blog-post-meta">
           <span>${dateFormatted}</span>
@@ -320,12 +320,17 @@ async function initCategoryPage(categorySlug, pageTitle, pageDescription) {
 // Render blog page
 async function initBlogPage() {
   const blogGrid = document.getElementById('blog-grid');
-  if (blogGrid) {
-    blogGrid.innerHTML = appData.blogPosts.map(post => generateBlogPostCard(post)).join('');
+  if (!blogGrid) return;
+
+  // Ensure data is loaded
+  await loadData();
+
+  if (appData.blogPosts.length === 0) {
+    blogGrid.innerHTML = '<p style="text-align:center;padding:2rem;color:var(--text-secondary);">No blog posts yet. Check back soon!</p>';
+    return;
   }
-  initCopyButtons();
-  initCouponModal();
-  initExpiryCountdown();
+
+  blogGrid.innerHTML = appData.blogPosts.map(post => generateBlogPostCard(post)).join('');
 }
 
 // Render categories page
@@ -373,92 +378,7 @@ function updateModalContent(modal, tool, discount, code, url, rating, expiry) {
   }
 }
 
-// ===== MODAL FUNCTIONS =====
-  const modal = document.getElementById('coupon-modal');
-  if (!modal) return;
-
-  document.querySelectorAll('.view-code-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const card = btn.closest('.coupon-card');
-      if (!card) return;
-
-      const tool = card.dataset.tool || '';
-      const discount = card.dataset.discount || '';
-      const code = card.dataset.code || '';
-      const url = card.dataset.url || '';
-      const rating = card.dataset.rating || '4.5';
-      const expiry = card.dataset.expiry || '';
-
-      // Open affiliate link
-      if (url) {
-        window.open(url, '_blank');
-      }
-
-      // Update modal content
-      updateModalContent(modal, tool, discount, code, url, rating, expiry);
-
-      // Show modal
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    });
-  });
-
-  // Close handlers
-  const closeBtn = modal.querySelector('.modal-close');
-  if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
-      modal.classList.remove('active');
-      document.body.style.overflow = '';
-    });
-  }
-
-  const overlay = modal.querySelector('.modal-overlay');
-  if (overlay) {
-    overlay.addEventListener('click', (e) => {
-      if (e.target === overlay) {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    });
-  }
-
-  // Copy button
-  const copyBtn = modal.querySelector('.modal-copy-btn');
-  if (copyBtn) {
-    copyBtn.addEventListener('click', async function() {
-      const codeEl = modal.querySelector('.modal-code');
-      if (!codeEl) return;
-
-      const code = codeEl.textContent.trim();
-      try {
-        await navigator.clipboard.writeText(code);
-        this.innerHTML = `
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="20 6 9 17 4 12"></polyline>
-          </svg>
-          Copied!
-        `;
-        this.classList.add('copied');
-        showToast('Coupon code copied!');
-
-        setTimeout(() => {
-          this.innerHTML = `
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-            </svg>
-            Copy Code
-          `;
-          this.classList.remove('copied');
-        }, 2000);
-      } catch (err) {
-        console.error('Copy failed', err);
-      }
-    });
-  }
-};
-
-// ===== SEO SCHEMA GENERATION =====
+// ===== EXPORT =====
 
 function generateSchemaMarkup() {
   const coupons = appData.coupons;

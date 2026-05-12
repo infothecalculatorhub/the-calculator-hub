@@ -10,7 +10,7 @@
   <script src="../data/dynamic.js"></script>
   <script src="../scripts.js"></script>
 </head>
-<body onload="loadData().then(() => { initBlogPage(); initCopyButtons(); initCouponModal(); initExpiryCountdown(); });">
+<body onload="loadData().then(() => { initBlogPage(); initCopyButtons(); initCouponModal(); initExpiryCountdown(); }).catch(err => console.error('Init error:', err));">
   <!-- Header -->
   <header class="header">
     <div class="header-content">
