@@ -8,8 +8,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../styles.css">
   <script src="../data/dynamic.js"></script>
+  <script src="../scripts.js"></script>
 </head>
-<body onload="initCategoryPage('seo-tools', 'SEO Tools', 'Save on SEO tools like Semrush, Ahrefs, Moz and more. Up to 45% off coupon codes.');">
+<body onload="loadData().then(() => { initCategoryPage('seo-tools', 'SEO Tools', 'Save on SEO tools like Semrush, Ahrefs, Moz and more. Up to 45% off coupon codes.'); initCopyButtons(); initCouponModal(); initExpiryCountdown(); });">
   <!-- Header -->
   <header class="header">
     <div class="header-content">

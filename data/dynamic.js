@@ -145,9 +145,25 @@ function generateBlogPostCard(post) {
 
 // ===== DATA LOADING =====
 
+// Get correct path to data.json based on current page location
+function getDataPath() {
+  const path = window.location.pathname;
+  // If we're in a subdirectory (blog/, ai-writing-tools/, etc.)
+  if (path.includes('/')) {
+    // Count depth and go up that many levels
+    const depth = (path.match(/\//g) || []).length;
+    const basePath = depth > 2 ? '../'.repeat(depth - 1) : '../';
+    return basePath + 'data/data.json';
+  }
+  return 'data/data.json';
+}
+
 async function loadData() {
   try {
-    const response = await fetch('data/data.json');
+    // Skip if already loaded
+    if (appData.coupons.length > 0) return true;
+
+    const response = await fetch(getDataPath());
     if (!response.ok) throw new Error('Failed to load data');
     const data = await response.json();
     appData = data;
@@ -246,11 +262,6 @@ async function initHomepage() {
   if (homepageBlogGrid) {
     homepageBlogGrid.innerHTML = appData.blogPosts.slice(0, 3).map(post => generateHomepageBlogCard(post)).join('');
   }
-
-  // Reinitialize functionality
-  initCopyButtons();
-  initCouponModal();
-  initExpiryCountdown();
 }
 
 // Generate homepage blog card (smaller version for homepage)
@@ -308,22 +319,24 @@ async function initCategoryPage(categorySlug, pageTitle, pageDescription) {
 
 // Render blog page
 async function initBlogPage() {
-  await loadData();
-
   const blogGrid = document.getElementById('blog-grid');
   if (blogGrid) {
     blogGrid.innerHTML = appData.blogPosts.map(post => generateBlogPostCard(post)).join('');
   }
+  initCopyButtons();
+  initCouponModal();
+  initExpiryCountdown();
 }
 
 // Render categories page
 async function initCategoriesPage() {
-  await loadData();
-
   const categoriesContainer = document.getElementById('categories-container');
   if (categoriesContainer) {
     categoriesContainer.innerHTML = appData.categories.map(cat => generateCategoryCard(cat)).join('');
   }
+  initCopyButtons();
+  initCouponModal();
+  initExpiryCountdown();
 }
 
 // ===== MODAL FUNCTIONS =====
@@ -360,10 +373,7 @@ function updateModalContent(modal, tool, discount, code, url, rating, expiry) {
   }
 }
 
-// Override initCouponModal to use dynamic data
-const originalInitCouponModal = window.initCouponModal;
-
-window.initCouponModal = function() {
+// ===== MODAL FUNCTIONS =====
   const modal = document.getElementById('coupon-modal');
   if (!modal) return;
 

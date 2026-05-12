@@ -8,9 +8,10 @@
   <link rel="canonical" href="https://toolcouponvault.com/">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js"></script>
   <script src="data/dynamic.js"></script>
 </head>
-<body data-page="home" onload="initHomepage(); injectSchemas();">
+<body data-page="home" onload="loadData().then(() => { initHomepage(); injectSchemas(); setTimeout(() => { initCopyButtons(); initCouponModal(); initExpiryCountdown(); initSearch(); }, 100); });">
 
   <!-- Header -->
   <header class="header">

@@ -8,8 +8,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../styles.css">
   <script src="../data/dynamic.js"></script>
+  <script src="../scripts.js"></script>
 </head>
-<body onload="initCategoryPage('ai-writing-tools', 'AI Writing Tools', 'Save up to 60% on AI-powered writing assistants');">
+<body onload="loadData().then(() => { initCategoryPage('ai-writing-tools', 'AI Writing Tools', 'Save up to 60% on AI-powered writing assistants'); initCopyButtons(); initCouponModal(); initExpiryCountdown(); });">
   <!-- Header -->
   <header class="header">
     <div class="header-content">

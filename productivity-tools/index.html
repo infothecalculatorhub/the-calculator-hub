@@ -8,8 +8,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../styles.css">
   <script src="../data/dynamic.js"></script>
+  <script src="../scripts.js"></script>
 </head>
-<body onload="initCategoryPage('productivity-tools', 'Productivity Tools', 'Boost your productivity with discounts on Notion, ClickUp, Asana, Trello and more. Up to 50% off.');">
+<body onload="loadData().then(() => { initCategoryPage('productivity-tools', 'Productivity Tools', 'Boost your productivity with discounts on Notion, ClickUp, Asana, Trello and more. Up to 50% off.'); initCopyButtons(); initCouponModal(); initExpiryCountdown(); });">
   <!-- Header -->
   <header class="header">
     <div class="header-content">
