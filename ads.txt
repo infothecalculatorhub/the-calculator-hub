@@ -1,0 +1,4 @@
+# ToolCouponVault - AdSense Publisher Verification
+# Replace with your actual AdSense publisher ID after approval
+# Google AdSense: Replace ca-pub-XXXXXXXXXX with your actual publisher ID
+# google.com, pub-XXXXXXXXXX, DIRECT, XXXXXXXXXX

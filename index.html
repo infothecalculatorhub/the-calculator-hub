@@ -10,6 +10,11 @@
   <link rel="stylesheet" href="styles.css">
   <script src="scripts.js"></script>
   <script src="data/dynamic.js"></script>
+
+  <!-- Google AdSense - Replace with your actual ad client code after approval -->
+  <!--
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
+  -->
 </head>
 <body data-page="home" onload="loadData().then(() => { initHomepage(); injectSchemas(); setTimeout(() => { initCopyButtons(); initCouponModal(); initExpiryCountdown(); initSearch(); }, 100); });">
 
@@ -321,5 +326,20 @@
   </footer>
 
   <script src="scripts.js"></script>
+  <script src="cookie-consent.js"></script>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-consent-banner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--bg-card); border-top: 1px solid var(--border-color); padding: 1.5rem; z-index: 9999; box-shadow: 0 -4px 20px rgba(0,0,0,0.1);">
+    <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;">
+      <div style="flex: 1; min-width: 300px;">
+        <h4 style="margin: 0 0 0.5rem; font-size: 1rem; font-weight: 600;">We value your privacy</h4>
+        <p style="margin: 0; font-size: 0.875rem; color: var(--text-secondary);">We use cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept All", you consent to our use of cookies. <a href="cookie-policy.html" style="color: var(--primary);">Learn more</a></p>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button onclick="rejectNonEssentialCookies()" style="padding: 0.5rem 1rem; border: 1px solid var(--border-color); background: transparent; color: var(--text-primary); border-radius: 6px; cursor: pointer; font-size: 0.875rem;">Reject</button>
+        <button onclick="acceptAllCookies()" style="padding: 0.5rem 1rem; border: none; background: var(--primary); color: white; border-radius: 6px; cursor: pointer; font-size: 0.875rem;">Accept All</button>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
