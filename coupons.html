@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Coupons & Deals - ToolCouponVault | 100% Verified Coupons</title>
+  <meta name="description" content="Browse all verified coupon codes and deals. Save up to 75% on AI tools, web hosting, productivity software and more. Updated daily.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="data/dynamic.js"></script>
+  <script src="scripts.js"></script>
+</head>
+<body onload="loadData().then(() => { initAllCouponsPage(); initCopyButtons(); initCouponModal(); initExpiryCountdown(); initCategoryFilter(); });">
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+            <line x1="7" y1="7" x2="7.01" y2="7"></line>
+          </svg>
+        </div>
+        ToolCouponVault
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="categories.html">Categories</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line></svg>
+          <svg id="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-header">
+    <h1>All Coupons & Deals</h1>
+    <p>100% verified coupons updated daily</p>
+  </section>
+
+  <div class="breadcrumb">
+    <a href="index.html">Home</a><span>/</span><span>All Coupons</span>
+  </div>
+
+  <section class="section">
+    <!-- Filter Buttons -->
+    <div class="filter-container" id="filter-container">
+      <button class="filter-btn active" data-category="all">All</button>
+    </div>
+
+    <!-- Search -->
+    <div class="search-container" style="max-width: 600px; margin: 1.5rem auto;">
+      <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <input type="text" class="search-bar" id="coupon-search" placeholder="Search coupons..." style="width: 100%;">
+    </div>
+
+    <!-- Coupons Grid -->
+    <div class="featured-grid" id="all-coupons-grid"></div>
+
+    <!-- No Results -->
+    <div id="no-results" style="display: none; text-align: center; padding: 3rem; color: var(--text-secondary);">
+      <p style="font-size: 1.125rem;">No coupons found matching your search.</p>
+      <p style="margin-top: 0.5rem;">Try a different search term or category.</p>
+    </div>
+  </section>
+
+  <!-- Coupon Modal -->
+  <div id="coupon-modal" class="modal-overlay">
+    <div class="coupon-modal">
+      <div class="modal-header">
+        <div class="modal-tool-logo"></div>
+        <div class="modal-tool-info">
+          <h3 class="modal-tool-name"></h3>
+          <span class="modal-discount"></span>
+        </div>
+        <button class="modal-close" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-verified">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          Verified Coupon
+        </div>
+        <div class="modal-code-box">
+          <div class="modal-code-label">Your Coupon Code</div>
+          <div class="modal-code"></div>
+          <button class="modal-copy-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            Copy Code
+          </button>
+        </div>
+        <a href="#" class="modal-deal-btn" target="_blank" rel="noopener">
+          Get This Deal
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+        <div class="modal-meta">
+          <span class="modal-rating"></span>
+          <span class="modal-expiry"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>ToolCouponVault</h3>
+        <p>Your trusted source for SaaS and AI tool discounts. We help businesses save money on the tools they love.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="ai-writing-tools/">AI Writing</a></li>
+          <li><a href="ai-design-tools/">AI Design</a></li>
+          <li><a href="seo-tools/">SEO Tools</a></li>
+          <li><a href="web-hosting-deals/">Web Hosting</a></li>
+          <li><a href="email-marketing-tools/">Email Marketing</a></li>
+          <li><a href="productivity-tools/">Productivity</a></li>
+          <li><a href="video-tools/">Video Tools</a></li>
+          <li><a href="etsy-seller-tools/">Etsy Seller Tools</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="coupons.html">All Coupons</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-and-conditions.html">Terms of Service</a></li>
+          <li><a href="cookie-policy.html">Cookie Policy</a></li>
+          <li><a href="affiliate-disclosure.html">Affiliate Disclosure</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 ToolCouponVault. All rights reserved. We may earn a commission when you use our links.</p>
+    </div>
+  </footer>
+
+  <script>
+    async function initAllCouponsPage() {
+      const grid = document.getElementById('all-coupons-grid');
+      const filterContainer = document.getElementById('filter-container');
+      const searchInput = document.getElementById('coupon-search');
+      const noResults = document.getElementById('no-results');
+
+      if (!grid) return;
+
+      // Render category filter buttons
+      const categories = ['all', ...new Set(appData.categories.map(c => c.slug))];
+      const categoryNames = {
+        'all': 'All',
+        'web-hosting-deals': 'Web Hosting',
+        'ai-writing-tools': 'AI Writing',
+        'ai-design-tools': 'AI Design',
+        'seo-tools': 'SEO Tools',
+        'email-marketing-tools': 'Email Marketing',
+        'productivity-tools': 'Productivity',
+        'video-tools': 'Video Tools',
+        'etsy-seller-tools': 'Etsy Seller Tools'
+      };
+
+      filterContainer.innerHTML = categories.map(cat =>
+        `<button class="filter-btn ${cat === 'all' ? 'active' : ''}" data-category="${cat}">${categoryNames[cat] || cat}</button>`
+      ).join('');
+
+      // Add click handlers for filters
+      filterContainer.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterContainer.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          filterCoupons();
+        });
+      });
+
+      // Render all coupons
+      function renderCoupons(couponsToShow) {
+        if (couponsToShow.length === 0) {
+          grid.style.display = 'none';
+          noResults.style.display = 'block';
+        } else {
+          grid.style.display = 'grid';
+          noResults.style.display = 'none';
+          grid.innerHTML = couponsToShow.map((coupon, index) => generateCouponCard(coupon, index)).join('');
+        }
+      }
+
+      function filterCoupons() {
+        const activeCategory = filterContainer.querySelector('.filter-btn.active').dataset.category;
+        const searchTerm = searchInput.value.toLowerCase().trim();
+
+        let filtered = appData.coupons;
+
+        if (activeCategory !== 'all') {
+          filtered = filtered.filter(c => c.categorySlug === activeCategory);
+        }
+
+        if (searchTerm) {
+          filtered = filtered.filter(c =>
+            c.tool.toLowerCase().includes(searchTerm) ||
+            c.description.toLowerCase().includes(searchTerm) ||
+            c.discount.toLowerCase().includes(searchTerm)
+          );
+        }
+
+        renderCoupons(filtered);
+        initCopyButtons();
+        initCouponModal();
+        initExpiryCountdown();
+      }
+
+      // Initial render
+      renderCoupons(appData.coupons);
+
+      // Search handler
+      searchInput.addEventListener('input', filterCoupons);
+    }
+  </script>
+</body>
+</html>
